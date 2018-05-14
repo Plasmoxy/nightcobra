@@ -14,7 +14,7 @@ class Player:
         self.speed = 5
 
     def draw(self):
-        c.create_oval(self.x-15, self.y-15, self.x+15, self.y+15)
+        c.create_oval(self.x-15, self.y-15, self.x+15, self.y+15, fill="black")
 
     def move(self):
         self.x += self.vx
