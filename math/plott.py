@@ -8,5 +8,7 @@ f = lambda x: x**2
 
 pylab.plot(xspace, sigmoid(xspace), )
 pylab.plot(xspace, f(xspace))
+pylab.plot(3, sigmoid(3), 'ro')
+pylab.plot(3, sigmoid(3), 'ro')
 
 pylab.show()
