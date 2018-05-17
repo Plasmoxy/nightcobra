@@ -1,4 +1,5 @@
 
+
 def decor(f):
     def wrap(x):
         print('===')
