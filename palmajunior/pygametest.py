@@ -15,6 +15,17 @@ pg.display.set_caption("Fajv")
 
 clock = pg.time.Clock()
 
+class Kocka:
+
+    def __init__(self, screen, x, y, a):
+        self.x = x
+        self.y = y
+        self.a = a
+        self.screen = screen
+
+    def draw(self):
+        pg.draw.rect(scr, RED, [mx-10, my-10, 20, 20], 0)
+
 done = False
 while not done:
     mpos = pg.mouse.get_pos()
@@ -27,7 +38,7 @@ while not done:
     
     scr.fill(BG)
 
-    pg.draw.rect(scr, RED, [mx-10, my-10, 20, 20], 0)
+    
 
     pg.display.flip()
     clock.tick(60)
