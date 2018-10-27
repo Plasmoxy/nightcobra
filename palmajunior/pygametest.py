@@ -1,10 +1,7 @@
 import os
-
-try :
-    import pygame as pg
-except ImportError:
-    os.system("pip install pygame")
-    import pygame as pg
+import random
+import pygame as pg
+from vectormath import Vector2
 
 BG = (0, 0, 0)
 RED = (255, 0, 0)
@@ -18,27 +15,40 @@ clock = pg.time.Clock()
 class Kocka:
 
     def __init__(self, screen, x, y, a):
-        self.x = x
-        self.y = y
+        self.pos = Vector2(x, y)
+        self.vel = Vector2(0, 0)
         self.a = a
         self.screen = screen
 
+    def update(self, dt):
+        self.pos = self.pos + (self.vel * dt)
+
     def draw(self):
-        pg.draw.rect(scr, RED, [mx-10, my-10, 20, 20], 0)
+        x = self.pos.x-self.a
+        y = self.pos.y-self.a
+        w = self.a*2
+        h = self.a*2
+        pg.draw.rect(scr, RED, [x, y, w, h], 0)
+
+k = Kocka(scr, 100, 100, 10)
 
 done = False
 while not done:
-    mpos = pg.mouse.get_pos()
-    mx = mpos[0]
-    my = mpos[1]
+    dt = clock.get_time()/1000
 
+    mparray = pg.mouse.get_pos()
+    mpos = Vector2(mparray[0], mparray[1])
+
+        
     for event in pg.event.get():
         if event.type == pg.QUIT:
             done = True
     
     scr.fill(BG)
 
-    
+    k.vel = (mpos - k.pos).normalize() * 200
+    k.update(dt)    
+    k.draw()
 
     pg.display.flip()
     clock.tick(60)
