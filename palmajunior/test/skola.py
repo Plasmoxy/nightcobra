@@ -48,7 +48,7 @@ def main():
     pass
 
 def testDokaz():
-    zn = [1, 2, 3]
+    zn = [1, 2]
     ciel = 1
 
     print("Znamky: " + str(zn) + " priemer= " + str(average(zn)))
