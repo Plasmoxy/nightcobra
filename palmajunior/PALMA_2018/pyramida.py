@@ -2,6 +2,7 @@ import turtle
 
 screen = turtle.Screen()
 t = turtle.Turtle()
+t.speed(200)
 
 # zakladne body
 xa = 50
@@ -29,3 +30,5 @@ def kresli_pyramidu(r, poschodia):
             polkruznica(xa - p*r + k*2*r, ya - p*r, r)
 
     screen.mainloop()
+
+kresli_pyramidu(10, 20)
