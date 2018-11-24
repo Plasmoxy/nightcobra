@@ -4,3 +4,5 @@ out/
 .idea/
 *.iml
 __pycache__
+*.webm
+*.mp3
