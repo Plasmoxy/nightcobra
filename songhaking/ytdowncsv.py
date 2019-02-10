@@ -1,3 +1,6 @@
+# Youtube DL CSV downloader
+# by Plasmoxy <3
+
 import csv, sys, os
 from shutil import which
 
