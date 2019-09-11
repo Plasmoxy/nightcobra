@@ -28,5 +28,5 @@ def on_draw():
     
     
 
-pyglet.clock.schedule_interval(tick, 1/5)
+pyglet.clock.schedule_interval(tick, 1/300)
 pyglet.app.run()
