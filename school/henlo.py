@@ -23,7 +23,6 @@ class Player:
 plr = Player()
 
 def loop():
-    global x, y
     c.delete('all')
 
     plr.move()
